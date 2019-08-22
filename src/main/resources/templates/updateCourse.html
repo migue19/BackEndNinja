@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Course</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}" />
+</head>
+<body>
+<div class="container">
+	<br>
+		<legend style="text-align: center;">Add Courses</legend>
+		<br>
+		<form autocomplete="off" action="#" th:action="@{/courses/addCourse}"
+			th:object="${course}" method="post">
+			<div class="form-group">
+				<label>Name</label> 
+				<input type="text" th:field="*{name}" class="form-control" placeholder="Enter name"> 
+			</div>
+			<div class="form-group">
+				<label>Description</label> 
+				<input type="text" th:field="*{description}" class="form-control" placeholder="Enter description"> 
+			</div>
+			<div class="form-group">
+				<label>Price</label> 
+				<input type="text" th:field="*{price}" class="form-control" placeholder="Enter price"> 
+			</div>
+			<div class="form-group">
+				<label>Hours</label> 
+				<input type="text" th:field="*{hours}" class="form-control" placeholder="Enter hours"> 
+			</div>
+			<a class="btn btn-primary" href="#" th:href="@{/courses/listCourses}" role="button">Back</a>
+			<button type="submit" class="btn btn-primary">Actualizar</button>
+			
+		</form>
+		
+		<br>
+		<br>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Courses</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}" />
+<link href="../static/fontawesome/css/all.css" rel="stylesheet"
+	th:href="@{/fontawesome/css/all.css}" />	
+	
+</head>
+<body>
+
+	<div class="container">
+		
+		<legend style="text-align: center;">Courses</legend>
+
+		<br>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Hours</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="course : ${courses}">
+					<td th:text="${course.id}"></td>
+					<td th:text="${course.description}"></td>
+					<td th:text="${course.price}"></td>
+					<td th:text="${course.hours}"></td>
+					<td><a href="#" th:href="@{'/courses/deleteCourse/' + ${course.id}}"><i class="fas fa-trash-alt"></i></a></td>
+					<td><a href="#" th:href="@{/courses/updateCourse/}"><i class="fas fa-edit"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+ 		<a class="btn btn-primary" href="#" th:href="@{/courses/addCourse/}">Add Course</a> 
+
+	
+	</div>
+
+</body>
+</html>
